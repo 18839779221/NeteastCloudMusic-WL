@@ -1,0 +1,38 @@
+<html data-dpr="1" style="font-size: 40px;">
+    <head>
+        <style type="text/css">
+            .main {
+                width: 300px;
+                height: 300px;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                background-color: antiquewhite;
+                padding: 1px;
+            }
+            .child-box {
+                width: 32%;
+                height: 32%;
+                flex-shrink: 1;
+                background-color: aqua;
+            }
+        </style>
+        <script>
+            window.onload = function() {
+                let mainDiv = document.querySelector(".main")
+                let innerHTML = "" 
+                for (let i=0;i<9;i++) {
+                    innerHTML += "<div class='child-box'></div>"
+                }
+                console.log(innerHTML)
+                mainDiv.innerHTML = innerHTML
+            }
+        </script>
+    </head>
+    <body>
+        <div class="main">
+            
+        </div>
+    </body>
+</html>

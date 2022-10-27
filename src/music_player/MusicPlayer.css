@@ -1,0 +1,127 @@
+.player-contaner {
+    width: 100%;
+}
+
+.player-main {
+    width: 100%;
+    background: linear-gradient(#363636, #0a0a0a);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px -4px 4px -2px grey;
+    border-top: 1px solid #131313;
+}
+
+.player-icon {
+    border: 2px solid white;
+    border-radius: 100%;
+    padding: 4px;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.player-switch-icon {
+    border: 2px solid #e0e0e0;
+    border-radius: 100%;
+    padding: 4px;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+}
+
+.player-music-img {
+    width: 36px;
+    height: 36px;
+    background-color: wheat;
+    border-radius: 2px;
+    margin-left: 24px;
+}
+
+.player-info-and-progress {
+    width: 28%;
+    margin-left: 16px;
+    font-size: 12px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.player-music-name {
+    line-height: 28px;
+    color: #e8e8e8;
+    text-overflow: ellipsis;
+}
+
+.player-singer-name {
+    color: #9b9b9b;
+    margin-left: 16px;
+    text-overflow: ellipsis;
+}
+
+.player-progress {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.player-progress-container {
+    padding-left: 3px;
+    height: 8px;
+    position: relative;
+    flex-grow: 1;
+}
+
+.player-progress-total {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background-color: #181818;
+    position: absolute;
+    box-shadow: inset 0px -0.5px 1px 1px rgb(100, 100, 100);
+}
+
+.player-progress-current {
+    height: 7px;
+    border-radius: 5px;
+    background-color: #BD0B0B;
+    box-shadow: 0px 0.5px 0.5px 1px #ED001D;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.player-progress-indicator {
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    border: 4px solid white;
+    background-color: #BD0B0B;
+    position: absolute;
+    left: -4px;
+    top: -2px;
+}
+
+.player-progress-text {
+    display: inline;
+    font-size: 12px;
+    color: #797979;
+    margin-left: 12px;
+}
+
+.player-volume-icon {
+    margin-left: 32px;
+}
+
+.player-volume-icon {
+    margin-left: 32px;
+}
+
+.player-play-mode-icon {
+    margin-left: 4px;
+}
+
+.player-play-list-icon {
+    margin-left: 10px;
+}

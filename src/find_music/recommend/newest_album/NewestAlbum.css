@@ -1,0 +1,71 @@
+.newest-album-main {
+    margin-block: 20px;
+    border: 1px solid lightgray;
+    background-color: #f5f5f5;
+    position: relative;
+    padding-inline: 20px;
+    padding-bottom: 10px;
+}
+
+.newest-album-switch-left {
+    width: 16px;
+    height: 20px;
+    background-color: cadetblue;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.newest-album-switch-right {
+    width: 16px;
+    height: 20px;
+    background-color: cadetblue;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.newest-album-switch-left:hover,
+.newest-album-switch-right:hover {
+    background-color: bisque;
+}
+
+.newest-album-list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    overflow-x: auto;
+}
+
+.newest-album-list::-webkit-scrollbar {
+    display: none;
+}
+
+.newest-album-item {
+    margin-top: 28px;
+    width: 18%;
+    flex-shrink: 0;
+    margin-inline: 1%;
+}
+
+
+.newest-album-item-img {
+    width: 100%;
+    padding-top: 100%;
+    margin-bottom: 8px;
+}
+
+.newest-album-item a {
+    display: block;
+    text-align: left;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 18px;
+    /* 处理中文和英文文本高度不一致问题 */
+}

@@ -1,0 +1,30 @@
+.artist-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.artist-main-content {
+    width: 60%;
+    height: 300px;
+    display: flex;
+    align-items: flex-start;
+    background-color: white;
+    border-inline: 1px solid lightgray;
+}
+
+.artist-main-left {
+    flex-grow: 3;
+    width: 0;
+    border: 1px solid lightgray;
+    padding: 20px;
+    border-right: 1px solid lightgray;
+}
+
+.artist-main-right {
+    flex-grow: 1;
+    width: 0;
+    border: 1px solid lightgray;
+    padding: 20px;
+}

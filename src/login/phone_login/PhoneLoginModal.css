@@ -1,0 +1,50 @@
+.phone-login-modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-login-container {
+    width: 530px;
+    height: 312px;
+    background-color: white;
+    border-radius: 4px 4px 4px 4px;
+}
+
+.phone-login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    color: white;
+    background-color: #191919;
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+.phone-login-content {
+    align-items: center;
+}
+
+.phone-login-phone {
+    border: 1px solid #cdcdcd;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+}
+
+.phone-login-phone-area {
+    
+}
+
+.phone-login-phone-input {
+    flex-grow: 1;
+}

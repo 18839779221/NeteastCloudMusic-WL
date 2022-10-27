@@ -1,0 +1,44 @@
+.second-bar {
+    display: flex;
+    justify-content: center;
+    z-index: 90;
+    background-color: #c20c0c;
+    height: 35px;
+    border-bottom: 1px solid #a40011;
+}
+.second-bar ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    height: inherit;
+}
+
+.second-bar ul li {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 7px 17px 0;
+    height: 20px;
+    line-height: 20px;
+    padding-inline: 13px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.second-bar ul li a {
+    text-decoration: none;
+}
+
+.second-bar ul li span {
+    position: absolute;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    top: 2px;
+    background: no-repeat center/80% url("https://s2.music.126.net/style/web2/img/white-r-icon@3x.png?9d8a0db58df1fbd86044585f38c4eb1e");
+}
+
+.second-bar ul li:hover, .second-bar ul .checked {
+    background: #9B0909;
+}

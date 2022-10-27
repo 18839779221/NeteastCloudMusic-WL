@@ -1,0 +1,60 @@
+.banner {
+    width: 100%;
+    height: 285px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;;
+}
+
+.banner-content {
+    height: 100%;
+    width: 800px;
+}
+
+.left-switch {
+    width: 37px;
+    height: 63px;
+    background-color: rgb(205, 154, 15);
+}
+
+.right-switch {
+    width: 37px;
+    height: 63px;
+    background-color: rgb(205, 154, 15);
+}
+
+.left-switch:hover {
+    background-color: #333333;
+}
+
+.right-switch:hover {
+    background-color: #333333;
+}
+
+.banner-list {
+    width: 50%;
+    height: 30px;
+    position: absolute;
+    margin-left: 20px;
+    margin-right: 20px;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.banner-dot {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    padding: 7px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-clip: content-box;
+}
+
+.banner-list .checked {
+    background-color: rgb(193, 13, 12);
+}

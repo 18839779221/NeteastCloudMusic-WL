@@ -1,0 +1,54 @@
+
+.bottom {
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    border-top: 1px solid lightgray;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+.bottom-copyright {
+    text-align: start;
+}
+
+.bottom-right {
+    margin-left: 30px;
+    display: flex;
+    justify-content: left;
+}
+
+a {
+    color: inherit;
+}
+
+.p1 {
+    color: rgb(153, 153, 153);
+}
+
+.p2 {
+    color: rgb(102, 102 ,102);
+}
+
+.policy-logo {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: no-repeat center/80% url("https://s2.music.126.net/style/web2/img/3rd/police.png?4fdaeec87ab3a46fc1b5e7de54423778");
+}
+
+.right-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    color: rgb(153, 153, 153);
+}
+
+.logo-img {
+    width: 50px;
+    height: 45px;
+    background-color: aqua;
+}
+

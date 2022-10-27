@@ -1,0 +1,60 @@
+.list-wrapper {
+    width: 100%;
+    height: auto;
+}
+
+.list-wrapper-header {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.list-wrapper-header a {
+    text-decoration: none;
+}
+
+.list-wrapper-header a:hover {
+    text-decoration: underline;
+}
+
+.list-wrapper-header span {
+    color: #cccccc;
+    font-size: 10px;
+}
+
+.list-wrapper-header-title-deco {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 4px solid rgb(193, 13, 12);
+}
+
+.list-wrapper-header-title {
+    font-size: 20px;
+    color: #333333;
+    white-space: nowrap;
+}
+
+.list-wrapper-header-item {
+    font-size: 12px;
+    color: #666666;
+    display: flex;
+    justify-content: left;
+}
+
+.list-wrapper-header-more {
+    justify-self: flex-end;
+    font-size: 12px;
+    color: #666666;
+    margin-left: auto; /* 居于父控件靠右 */
+    margin-right: 10px;
+}
+
+.list-wrapper-divider {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(193, 13, 12);
+}

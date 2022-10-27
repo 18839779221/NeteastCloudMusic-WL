@@ -1,0 +1,42 @@
+.volume-progress-container {
+    position: absolute;
+    width: 26px;
+    height: 116px;
+    bottom: 50px;
+    box-sizing: border-box;
+    padding-inline: 10px;
+    padding-top: 10px;
+    background-color: #292929;
+}
+
+.volume-progress-total {
+    width: 6px;
+    height: 100px;
+    border-radius: 2px;
+    background-color: #181818;
+    box-shadow: inset 0px -0.5px 0.5px 0.5px rgb(80, 80, 80);
+    position: absolute;
+}
+
+.volume-progress-current {
+    width: 6px;
+    border-radius: 2px;
+    margin-bottom: 6px;
+    background-color: #BD0B0B;
+    box-shadow: 0px -0.5px 0.5px 0.5px #ED001D;
+    bottom: 0;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.volume-progress-indicator {
+    width: 3px;
+    height: 3px;
+    border-radius: 100%;
+    left: 8px;
+    margin-bottom: 8px;
+    border: 3px solid white;
+    background-color: #BD0B0B;
+    position: absolute;
+}

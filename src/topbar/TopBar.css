@@ -1,0 +1,78 @@
+.top-bar {
+    z-index: 1000;
+    text-align: center;
+    height: 70px;
+    width: 100%;
+    background-color: #242424;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.logo {
+    width: 176px;
+    height: 70px;
+    background-image: url("https://s2.music.126.net/style/web2/img/frame/topbar.png?bc8652b033d3338a51e586776254f380");
+}
+
+.top-bar-list {
+    padding: 0px;
+    list-style-type: none; /* 去除前边的.*/
+    width: auto;
+    height: 100%;
+}
+
+.top-bar-list-item {
+    float: left;
+    height: 100%;
+}
+
+.top-bar-list-item a {
+    display: block;
+    color: #ccc;
+    padding-inline: 18px;
+    line-height: 70px;
+    font-size: 15px;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.top-bar-list-item a:hover, .top-bar-list .checked {
+    background-color: black;
+}
+
+.search-bar {
+    margin: 18px 0px 18px 80px;
+    width: 158px;
+    height: 32px;
+    background: url("https://s2.music.126.net/style/web2/img/frame/topbar.png?bc8652b033d3338a51e586776254f380") no-repeat;
+    background-color: white;
+    background-position: left 0px top 53%;
+    border-radius: 32px;
+}
+
+.search-bar input {
+    display: block;
+    width: 76%;
+    border: none;
+    font-size: 12px;
+    background: none;
+    outline: none;
+    position: relative;
+    top: 8px;
+    left: 30px;
+}
+
+.btn-login {
+    display: block;
+    line-height: 70px;
+    color: #787878;
+    font-size: 12px;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.btn-login:hover {
+    text-decoration: underline;
+}
