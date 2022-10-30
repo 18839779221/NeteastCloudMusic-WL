@@ -32,8 +32,15 @@
 6. 不舒服的用法：与外部交互的组件的必须对外暴露props
     例如包含title的Dialog组件需要暴露的props有title和onTitleChanged()两个属性，另外外部需要持有state.title，且需要实现onTitleChanged()，这样内部组件的功能并不是完备的，必须依赖外部才能完成其功能。
     因为缺少对外暴露的方法，组件只能和外部相互协作来完成自身功能，是否也是破坏了组件的内聚性质呢。如果能直接提供Dialog.setTitle()方法，提供Dialog.close()方法，看起来使用是更为方便的。
+    对于登录弹窗的场景，如果有多个地方的点击需要弹出登录弹窗，则每个地方都需要处理登录弹窗的visible状态。
 
 7. 不方便的用法：music?.lyric = lyric ,如果music可能为空，则此代码必须写为
   if (music) {
     music.lyric = lyric
   }
+
+8. interface实例化
+  先创建对象，然后使用 as 转换
+  const userInfoState = {
+    userInfo: null
+  } as UserInfoState

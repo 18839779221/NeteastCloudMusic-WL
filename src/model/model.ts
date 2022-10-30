@@ -161,9 +161,10 @@ export interface PlayListModel {
 
 export interface UserInfoModel {
     defaultAvatar: boolean,
-    province: number,
     authStatus: number,
     followed: boolean,
+    followeds: number,
+    follows: number,
     avatarUrl: string,
     accountStatus: boolean,
     gender: number,
@@ -177,5 +178,26 @@ export interface UserInfoModel {
     avatarImgId: number,
     backgroundImgId: number,
     backgroundUrl: string,
+    playlistCount: number,
+    playlistBeSubscribedCount: number,
+    province: number,
 }
 
+export interface LoginResModel{
+    loginType: number,
+    code: number
+    account?: AccountInfoModel,
+    token?: string,
+    cookie?: string,
+    profile?: UserInfoModel
+}
+
+export interface AccountInfoModel {
+    id: string,
+    user_name: string,
+    create_time: number,
+    ban: number,
+    status: number,
+    salt?: string,
+    vipType: number,
+}

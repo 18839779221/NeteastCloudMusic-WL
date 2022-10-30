@@ -1,17 +1,21 @@
 import "./TopBar.css";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { MyMusic } from "../my_music/MyMusic";
 import { FindMusic } from "../find_music/FindMusic";
-import { PhoneLoginModal } from "../login/phone_login/PhoneLoginModal";
+import { PhoneLoginModal } from "../user/phone_login/PhoneLoginModal";
 import ReactDOM from "react-dom";
+import { useSelector } from "react-redux";
+import { selectUserInfo } from "@/user/userInfoSlice";
+import { UserInfoMoreModal } from "@/user/user_info_more/UserInfoMoreModal";
 
 export function TopBar() {
   const [currentItem, setCurrentItem] = useState(0);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showUserInfoMoreModal, setShowUserInfoMoreModal] = useState(false);
+  const userInfo = useSelector(selectUserInfo);
 
   const loginModal = () => {
-    console.log("create-modal")
     const rootNode = document.querySelector(".app-root")
     if (rootNode) {
       return ReactDOM.createPortal(<PhoneLoginModal
@@ -21,6 +25,36 @@ export function TopBar() {
         rootNode)
     }
     return null
+  }
+
+  const userInfoElement = () => {
+    if (!userInfo) {
+      return (
+        <Fragment>
+          <a className="top-bar-btn-login" onClick={() => setShowLoginModal(true)}>
+            登录
+          </a>
+          {showLoginModal && loginModal()}
+        </Fragment>)
+    } else {
+      let avatar = "wheat"
+      if (userInfo.avatarUrl) {
+        avatar = `center / contain no-repeat url(${userInfo.avatarUrl})`
+      }
+      return (
+          <div style={{ background: avatar }}
+            className="top-bar-user-avatar"
+            title={userInfo.nickname}
+            onMouseEnter={() => setShowUserInfoMoreModal(true)}
+            onMouseLeave={() => setShowUserInfoMoreModal(false)}>
+          {showUserInfoMoreModal && (
+            <UserInfoMoreModal
+              visible={showUserInfoMoreModal}
+              close={() => setShowUserInfoMoreModal(false)} />
+          )}
+            </div>
+      );
+    }
   }
 
   return (
@@ -42,10 +76,7 @@ export function TopBar() {
       <div className="search-bar">
         <input type="text" placeholder="音乐/视频/电台/用户"></input>
       </div>
-      <a className="btn-login" onClick={() => setShowLoginModal(true)}>
-        登录
-      </a>
-      {showLoginModal && loginModal()}
+      {userInfoElement()}
     </div>
   );
 }

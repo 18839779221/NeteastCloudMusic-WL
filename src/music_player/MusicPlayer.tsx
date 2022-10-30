@@ -1,5 +1,5 @@
 import "./MusicPlayer.css";
-import "../img/iconfont.js";
+import "../asserts/img/iconfont.js";
 import React, { useEffect, useRef, useState } from "react";
 import { formatDurationMMSS } from "../utils/format";
 import { useDispatch, useSelector } from "react-redux";
