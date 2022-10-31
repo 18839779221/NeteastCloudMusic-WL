@@ -70,7 +70,6 @@ export const PhoneLoginModal: React.FC<Props> = (props) => {
 
     const handleAutoLoginChange = (e: any) => {
         const checked = e.target.checked
-        console.log(checked);
 
         if (typeof checked === "boolean") {
             setAutoLogin(checked)

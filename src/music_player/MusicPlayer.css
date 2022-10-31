@@ -112,10 +112,7 @@
 
 .player-volume-icon {
     margin-left: 32px;
-}
-
-.player-volume-icon {
-    margin-left: 32px;
+    position: relative;
 }
 
 .player-play-mode-icon {

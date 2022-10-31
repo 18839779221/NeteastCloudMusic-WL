@@ -47,11 +47,9 @@ export function TopBar() {
             title={userInfo.nickname}
             onMouseEnter={() => setShowUserInfoMoreModal(true)}
             onMouseLeave={() => setShowUserInfoMoreModal(false)}>
-          {showUserInfoMoreModal && (
             <UserInfoMoreModal
               visible={showUserInfoMoreModal}
               close={() => setShowUserInfoMoreModal(false)} />
-          )}
             </div>
       );
     }

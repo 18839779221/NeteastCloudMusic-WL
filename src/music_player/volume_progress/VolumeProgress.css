@@ -2,7 +2,8 @@
     position: absolute;
     width: 26px;
     height: 116px;
-    bottom: 50px;
+    left: -10px;
+    bottom: 34px;
     box-sizing: border-box;
     padding-inline: 10px;
     padding-top: 10px;
