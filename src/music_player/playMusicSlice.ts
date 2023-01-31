@@ -1,4 +1,4 @@
-import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSelector, createSlice, Dispatch, PayloadAction } from "@reduxjs/toolkit";
 import { dropWhile } from "lodash";
 import { LyricResModel, MusicDetailModel } from "../model/model";
 import request from "../utils/request";
@@ -60,7 +60,7 @@ const playMusicSlice = createSlice({
         currentMusic.url = action.payload.url;
       }
     },
-    addLyricAction(
+    updateLyricAction(
       state,
       action: PayloadAction<{ musicId: number; lyric: string }>
     ) {
@@ -73,27 +73,27 @@ const playMusicSlice = createSlice({
   },
 });
 
-const fetchLyricIfNotExist = (currentMusic: MusicDetailModel) => {
-  if (!currentMusic?.lyric) {
-    console.log("fetchLyricIfNotExist");
-    // 获取歌词
+const getCurrentLyric = () => {
+  return (dispatch: Dispatch, playMusic: PlayListState) => {
+    let currentMusic = getCurrentMusic(playMusic)
+    let currentLyric = currentMusic.lyric;
+    if (currentLyric) {
+      dispatch(updateLyricAction({musicId: currentMusic.id, lyric: currentLyric}));
+    }
     request({
-      url: "/lyric",
-      params: {
-        id: currentMusic.id,
-      },
-    }).then((res: LyricResModel) => {
-      currentMusic.lyric = res.lrc.lyric;
-    });
+          url: "/lyric",
+          params: {
+            id: getCurrentMusic(playMusic)?.id,
+          },
+        }).then((res: LyricResModel) => {
+          dispatch(updateLyricAction({musicId: currentMusic.id, lyric: res?.lrc?.lyric}));
+        })
   }
-};
+}
 
 // selectors
 const getCurrentMusic = (playMusic: PlayListState) => {
   const currentMusic = playMusic.playList[playMusic.currentIndex] || null;
-  if (currentMusic) {
-    fetchLyricIfNotExist(currentMusic);
-  }
   return currentMusic;
 };
 
@@ -112,6 +112,7 @@ export const {
   appendMusicAction,
   updatePlayListAction,
   updateCurrentMusicWithUrlAction,
+  updateLyricAction
 } = playMusicSlice.actions;
 
 export default playMusicSlice.reducer;
