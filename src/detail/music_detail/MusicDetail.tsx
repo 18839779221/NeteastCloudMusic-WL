@@ -67,7 +67,7 @@ export function MusicDetail() {
       <Fragment>
         <div className="mdrmi-lyric">
           {toShowLyric.map((lyricItem) => (
-            <Fragment>
+            <Fragment key={lyricItem}>
               {lyricItem} <br />
             </Fragment>
           ))}

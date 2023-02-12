@@ -1,5 +1,5 @@
 import "./TopBar.css";
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { MyMusic } from "../my_music/MyMusic";
 import { FindMusic } from "../find_music/FindMusic";
@@ -8,10 +8,11 @@ import ReactDOM from "react-dom";
 import { useSelector } from "react-redux";
 import { selectUserInfo } from "@/user/userInfoSlice";
 import { UserInfoMoreModal } from "@/user/user_info_more/UserInfoMoreModal";
+import { LoginModalContext } from "@/user/phone_login/LoginModalContext";
 
 export function TopBar() {
+  const loginModalContext = useContext(LoginModalContext)
   const [currentItem, setCurrentItem] = useState(0);
-  const [showLoginModal, setShowLoginModal] = useState(false);
   const [showUserInfoMoreModal, setShowUserInfoMoreModal] = useState(false);
   const userInfo = useSelector(selectUserInfo);
 
@@ -19,8 +20,8 @@ export function TopBar() {
     const rootNode = document.querySelector(".app-root")
     if (rootNode) {
       return ReactDOM.createPortal(<PhoneLoginModal
-        visible={showLoginModal}
-        close={() => setShowLoginModal(false)}
+        visible={loginModalContext.visible}
+        close={() => loginModalContext.setVisible(false)}
       ></PhoneLoginModal>,
         rootNode)
     }
@@ -31,10 +32,10 @@ export function TopBar() {
     if (!userInfo) {
       return (
         <Fragment>
-          <a className="top-bar-btn-login" onClick={() => setShowLoginModal(true)}>
+          <a className="top-bar-btn-login" onClick={() => loginModalContext.setVisible(true)}>
             登录
           </a>
-          {showLoginModal && loginModal()}
+          {loginModalContext.visible && loginModal()}
         </Fragment>)
     } else {
       let avatar = "wheat"

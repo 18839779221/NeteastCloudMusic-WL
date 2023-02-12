@@ -26,6 +26,8 @@ export const PlayListModal: React.FC<Props> = (props) => {
   useEffect(() => {
     // 点击空白区域关闭
     const dismissOnClickOutSide = (event: Event) => {
+      // 这句不加会导致其他外部按钮点击被拦截
+      if (props.visible == false) return;
       const targetNode = event?.target;
       if (targetNode instanceof HTMLElement) {
         const playListModalNode = document.querySelector(
@@ -91,8 +93,8 @@ export const PlayListModal: React.FC<Props> = (props) => {
           {preprocessLyric(currentMusic?.lyric)?.map((item) => (
             <p
               className={
-                item.time <= props.currentTime &&
-                item.nextTime > props.currentTime
+                item.time <= props.currentTime * 1000 &&
+                item.nextTime > props.currentTime * 1000
                   ? "play-list-lyric-current"
                   : "play-list-lyric-normal"
               }

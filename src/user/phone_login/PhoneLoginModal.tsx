@@ -5,12 +5,12 @@ import { LoginResModel } from '@/model/model';
 import { useDispatch } from 'react-redux';
 import { updateUserInfoAction } from '../userInfoSlice';
 
-interface Props {
+export interface PhoneLoginModalProps {
     visible: boolean;
     close: () => void;
 }
 
-export const PhoneLoginModal: React.FC<Props> = (props) => {
+export const PhoneLoginModal: React.FC<PhoneLoginModalProps> = (props) => {
 
     const [autoLogin, setAutoLogin] = useState(false)
     const [errorTips, setErrorTips] = useState("")

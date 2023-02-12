@@ -71,6 +71,7 @@
     width: 40%;
     height: 100%;
     background-color: #3a3b3a;
+    overflow: hidden;
 }
 
 .play-list-item {
@@ -97,7 +98,7 @@
     width: 70%;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .play-list-item-artist {
