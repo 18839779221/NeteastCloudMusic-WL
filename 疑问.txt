@@ -4,6 +4,9 @@
  答：正确使用<Fragment></Fragment>，案例详见MusicDetail.tsx
 
 3. useState 更新对象的属性
+  答：React更倾向于开发者使用多个简单数据类型的state，这样可以更方便后续的逻辑拆分。但是很多时候很难做到这一点，比如接口返回的数据就是复杂的数据类型，此时可以通过对象clone的方式更新state。
+  setState(Objetc.assign({},prevState, { field: newValue }))
+  如果是数组，setState(Objetc.assign({},prevState, { list: prevState.list.concat(["newItem"]) }))
 
 
 4. 弹窗点击外部区域关闭
@@ -44,3 +47,6 @@
   const userInfoState = {
     userInfo: null
   } as UserInfoState
+
+9. 页面中有多个入口可以触发登录弹窗（PhoneLoginModal），目前因为登录弹窗会阻止其遮罩下的UI点击，所以暂无问题。但是如果登录弹窗不阻止下层组件的点击，则可能会在已有登录弹窗的情况下再弹出一个新的登录弹窗，只能添加逻辑在每次弹出弹窗前判断是否已经存在某个登录弹窗实例（可使用querySelector）。另外一点是由于登录弹窗一般通过自身暴露props:{visible: boolean, close: () => {}}来组织代码，这样会导致所有吊起登录弹窗的按钮所在组件都要实现一次close方法，并使用一个loginModalVisible的state来控制弹窗展示，看起来这里是可以通过某种手段优化的，但是具体该如何做。
+ 答：使用React.Context解决，此问题本质上是寻找最小公共祖先的问题。对于任意位置可能触发弹窗的按钮，他们的公共组件只能是根组件，于是我们可以在App组件中创建context暴露出{visible: boolean, setVisible: (visible: boolean) => void}，并设置setVisible的实现。在所有吊起登录弹窗的地方使用setVisible方法来改变弹窗可见性。这样就可保证全局只有一个登录弹窗。
